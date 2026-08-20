@@ -3,28 +3,27 @@ pipeline {
     environment {
         PATH = "/opt/maven/bin:$PATH"
     }
+
     stages {
-        stage('build') { 
+        stage('build') {
             steps {
                 sh 'mvn clean package'
             }
     }
 
-    stages ('SonarQube analysis') {
+    stages('SonarQube analysis') {
         environment {
-            scannerHome = tool ; 'SonarQube Scanner'
-      
+            scannerHome = tool ; 'tushar-sonar-scanner'
+
         }
 
         steps {
-            withSonarQubeEnv( 'Sonar-Qube Server') {
+            withSonarQubeEnv('tushar-sonarqube-server') {
 
                 sh "${scannerHome}/bin/sonar-scanner"
-         
+
             }
          }
       }
    }
 }
-
-
