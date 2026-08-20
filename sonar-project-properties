@@ -1,6 +1,6 @@
 sonar.verbose=true
-sonar.organization=devopstusharkey
-sonar.projectKey=devopstusharkey__tusharproject
+sonar.organization=devopstushar
+sonar.projectKey=devopstushar__tusharproject
 sonar.projectName=tusharproject
 sonar.language=java
 sonar.sourceEncoding=UTF-8
