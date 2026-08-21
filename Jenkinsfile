@@ -2,7 +2,6 @@ def registry = 'https://trialqt03su.jfrog.io/'
 
 pipeline {
     agent any
-
     environment {
         PATH = "/opt/maven/bin:$PATH"
     }
