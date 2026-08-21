@@ -14,7 +14,7 @@ pipeline {
 
         stage( 'SonarQube analysis' ) {
             environment {
-                 scannerHome = tool 'tushar-sonar-scanner'
+                 scannerHome = tool 'tusharsonar'
 
             }
 
