@@ -10,21 +10,21 @@ pipeline {
             steps {
                 sh 'mvn clean deploy'
             }
-    }
-
-    stage('SonarQube analysis') {
-        environment {
-            scannerHome = tool 'tushar-sonar-scanner'
-
         }
 
-        steps {
-            withSonarQubeEnv('tushar-sonarqube-server') {
-
-                sh "${scannerHome}/bin/sonar-scanner"
+        stages('SonarQube analysis') {
+            environment {
+                 scannerHome = tool 'tushar-sonar-scanner'
 
             }
-         }
-      }
-   }
+
+            steps {
+                withSonarQubeEnv('tushar-sonarqube-server') {
+
+                    sh "${scannerHome}/bin/sonar-scanner"
+
+                }
+            }
+       }
+    }
 }
