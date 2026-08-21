@@ -12,7 +12,7 @@ pipeline {
             }
         }
 
-        stages( 'SonarQube analysis' ) {
+        stage( 'SonarQube analysis' ) {
             environment {
                  scannerHome = tool 'tushar-sonar-scanner'
 
