@@ -12,16 +12,16 @@ pipeline {
             }
         }
 
-        stage( 'SonarQube analysis' ) {
+        stage('SonarQube Analysis') {
             environment {
-                 scannerHome = tool 'tusharsonar'
+                 scanner_Home = tool 'tusharsonar'
 
             }
 
             steps {
                 withSonarQubeEnv('tushar-sonarqube-server') {
 
-                    sh "${scannerHome}/bin/sonar-scanner"
+                    sh "${SCANNER_HOME}/bin/sonar-scanner"
 
                 }
             }
