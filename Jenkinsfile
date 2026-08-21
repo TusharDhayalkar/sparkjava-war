@@ -1,5 +1,4 @@
 def registry = 'https://trialqt03su.jfrog.io/'
-
 pipeline {
     agent any
     environment {
@@ -8,7 +7,7 @@ pipeline {
 
     stages {
 
-        stage("package") {
+        stage("build") {
             steps {
                 echo "----------- build started ----------"
                 sh 'mvn clean deploy -Dmaven.test.skip=true'
